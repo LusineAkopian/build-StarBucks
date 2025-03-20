@@ -71,34 +71,41 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.banner-desctiption {
   font-weight: 600;
   margin-bottom: 0.5em;
   color: #fff;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 5rem;
+  line-height: 1.1;
 }
 
 h2 {
-  font-size: 2.375rem;
+  font-size: 3.875rem;
+  line-height: 1.1;
 }
 
 h3 {
   font-size: 2rem;
+  line-height: 1.32;
 }
 
 h4 {
-  font-size: 1.75rem;
+  font-size: 1.625rem;
+  line-height: 1.23;
 }
 
 h5 {
   font-size: 1.5rem;
+  line-height: 1.46;
 }
 
-h6 {
+h6, .banner-desctiption {
   font-size: 1.25rem;
+  line-height: 1.63;
 }
 
 p {
@@ -114,11 +121,47 @@ a:hover {
   color: #35c66b;
 }
 
+.btn {
+  color: #fff;
+  font-size: 24px;
+  border-radius: 50px;
+  border: none;
+  text-decoration: none;
+  background: transparent;
+  display: inline-block;
+}
+
+.btn-primary {
+  padding: 20px 80px;
+  font-weight: 600;
+  background-image: linear-gradient(263.46deg, #237249 3.14%, #35C66B 87.2%);
+}
+
+.btn-secondary {
+  padding: 20px 54px;
+  background: #121517;
+  position: relative;
+}
+.btn-secondary::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background-image: linear-gradient(140deg, #717070 3.14%, #000000 87.2%);
+  z-index: -1;
+  border-radius: 40px;
+}
+
 .container {
   max-width: 1274px;
   padding: 0 12px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.gradoient {
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(263.46deg, #237249 3.14%, #35C66B 87.2%);
 }
 
 ::selection {
@@ -150,6 +193,26 @@ header .btn-burger {
 }
 .menu__link:hover {
   color: #35c66b;
+}
+
+.banner .container {
+  display: flex;
+  gap: 24px;
+}
+.banner-content {
+  max-width: 574px;
+}
+.banner h1 {
+  font-weight: 800;
+}
+.banner-desctiption {
+  color: #d9d9d9;
+  font-weight: 400;
+  margin-bottom: 56px;
+}
+.banner-btn-group {
+  gap: 16px;
+  display: flex;
 }
 
 footer {
@@ -266,7 +329,7 @@ footer {
   z-index: -1;
 }
 
-.btn, .btn-outline {
+.btn-outline {
   width: 84px;
   height: 84px;
   border: 1px solid #238249;
@@ -275,7 +338,7 @@ footer {
   align-items: center;
   justify-content: center;
 }
-.btn svg, .btn-outline svg {
+.btn-outline svg {
   height: 35px;
 }
 
