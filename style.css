@@ -12,6 +12,16 @@ Tags: custom-colors, custom-header, custom-menu, custom-logo, editor-style, feat
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+.white-wrapper {
+  background: linear-gradient(264.52deg, #FFFFFF 4.95%, #E5E5E5 64.19%, #FBFBFB 88.37%);
+}
+.white-wrapper h1, .white-wrapper h2, .white-wrapper h3, .white-wrapper h4, .white-wrapper h5, .white-wrapper h6, .white-wrapper .banner-desctiption {
+  color: #121517;
+}
+.white-wrapper p {
+  color: #292C2E;
+}
+
 @font-face {
   font-family: "Montserrat";
   src: url("./assets/fonts/Montserrat-Light.ttf") format("TrueType");
@@ -178,6 +188,45 @@ a:hover {
   background-image: url(./assets/img/btn-secondary-hover.svg);
 }
 
+.accent-label, .accent-label__sm {
+  --max-size:184px;
+  --size: 14.154vw;
+  width: var(--size);
+  height: var(--size);
+  max-width: var(--max-size);
+  max-height: var(--max-size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url(./assets/img/bg-discount.svg) center/100% no-repeat;
+  position: absolute;
+  color: #fff;
+  font-size: 55px;
+  font-size: min(4.231vw, 55px);
+  top: 0;
+  right: 38px;
+  text-transform: uppercase;
+}
+.accent-label::before, .accent-label__sm::before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 42px);
+  height: calc(100% - 42px);
+  box-shadow: -4.56px 15.52px 26.48px 0px rgba(20, 62, 40, 0.4588235294);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.accent-label__sm {
+  font-size: 32px;
+  --max-size:133px;
+}
+
 .container {
   max-width: 1274px;
   padding: 0 12px;
@@ -185,10 +234,14 @@ a:hover {
   margin-right: auto;
 }
 
-.gradoient {
+.gradient-text {
   color: transparent;
   background-clip: text;
   background-image: linear-gradient(263.46deg, #237249 3.14%, #35C66B 87.2%);
+}
+
+.gradient-background, .advantage__img-box {
+  background-image: linear-gradient(267.2deg, #237249 3.05%, #35C66B 75.72%);
 }
 
 ::selection {
@@ -336,38 +389,6 @@ header .btn-burger {
   top: calc(100% - 115px);
   background: url(./assets/img/banner-decoration-img-medim.png);
 }
-.banner-discount {
-  --max-size:184px;
-  --size: 14.154vw;
-  width: var(--size);
-  height: var(--size);
-  max-width: var(--max-size);
-  max-height: var(--max-size);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: url(./assets/img/bg-discount.svg) center/100% no-repeat;
-  position: absolute;
-  color: #fff;
-  font-size: 55px;
-  font-size: min(4.231vw, 55px);
-  top: 0;
-  right: 38px;
-}
-.banner-discount::before {
-  content: "";
-  position: absolute;
-  width: calc(100% - 42px);
-  height: calc(100% - 42px);
-  box-shadow: -4.56px 15.52px 26.48px 0px rgba(20, 62, 40, 0.4588235294);
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  z-index: -1;
-}
 .banner-line {
   width: 1102px;
   height: 672;
@@ -375,6 +396,11 @@ header .btn-burger {
   top: 200px;
   right: -350px;
   z-index: -1;
+}
+
+.accent-label, .accent-label__sm {
+  top: 0;
+  right: 38px;
 }
 
 footer {
@@ -511,8 +537,78 @@ footer {
 .advantages-row {
   border-radius: 46px;
   padding: 54px 78px 36px;
+  position: relative;
   height: 372px;
-  background: linear-gradient(264.52deg, #FFFFFF 4.95%, #E5E5E5 64.19%, #FBFBFB 88.37%);
+  display: flex;
+  gap: 24px;
+  text-align: center;
+  justify-content: space-between;
+  max-width: 1029px;
+  margin: 0 auto;
+}
+.advantages-row::before {
+  --size: 750px;
+  content: "";
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background: center/contain, no-repeat;
+  width: var(--size);
+  height: var(--size);
+  left: 100px;
+  top: 150px;
+  background: url(./assets/img/decoration__advantages-accent.png);
+}
+.advantages-row::after {
+  --size: 600px;
+  content: "";
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background: center/contain, no-repeat;
+  width: var(--size);
+  height: var(--size);
+  left: 100%;
+  top: 100%;
+  background: url(./assets/img/decoration__advantages-light.png);
+}
+.advantages-row .accent-label__sm {
+  top: -50px;
+  left: -50px;
+}
+
+.advantage {
+  text-align: center;
+  max-width: 227px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.advantage__img-box {
+  position: relative;
+  --size: 148px ;
+  width: var(--size);
+  height: var(--size);
+  box-shadow: 0px 4px 41px 0px rgba(0, 0, 0, 0.3882352941);
+  border-radius: 50%;
+  margin: 12px;
+}
+.advantage img {
+  position: absolute;
+  max-width: 220px;
+  max-height: 220px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.advantage__title {
+  z-index: 1;
 }
 
 @media (min-width: 1025px) {
@@ -526,6 +622,10 @@ footer {
   }
 }
 @media screen and (max-width: 1199.99px) {
+  .advantages-row .accent-label__sm {
+    top: -50px;
+    left: -20px;
+  }
   .footer-nav {
     max-width: 650px;
   }
@@ -628,7 +728,7 @@ footer {
     padding: 0 27px;
     margin-right: initial;
   }
-  .banner .banner-discount {
+  .banner .accent-label, .banner .accent-label__sm {
     right: 55px;
   }
   .banner .banner-img::before {
@@ -639,7 +739,7 @@ footer {
     top: 157px;
   }
   .banner .btn-primary {
-    padding: 13px 4px;
+    padding: 13px 40px;
   }
   .banner .btn-secondary {
     padding: 13px 32px;
@@ -652,6 +752,9 @@ footer {
   }
   .banner-statistic__subtitle {
     font-size: 12px;
+  }
+  .accent-label, .accent-label__sm {
+    right: 55px;
   }
   .footer {
     padding: 37px 0 7px;
