@@ -15,7 +15,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .white-wrapper {
   background: linear-gradient(264.52deg, #FFFFFF 4.95%, #E5E5E5 64.19%, #FBFBFB 88.37%);
 }
-.white-wrapper h1, .white-wrapper h2, .white-wrapper h3, .white-wrapper h4, .white-wrapper h5, .white-wrapper h6, .white-wrapper .banner-desctiption {
+.white-wrapper h1, .white-wrapper h2, .white-wrapper h3, .white-wrapper h4, .white-wrapper h5, .white-wrapper h6, .white-wrapper .template-description {
   color: #121517;
 }
 .white-wrapper p {
@@ -83,7 +83,7 @@ h3,
 h4,
 h5,
 h6,
-.banner-desctiption {
+.template-description {
   font-weight: 600;
   margin-bottom: 0.5em;
   color: #fff;
@@ -114,9 +114,26 @@ h5 {
   line-height: 1.46;
 }
 
-h6, .banner-desctiption {
+h6, .template-description {
   font-size: 1.25rem;
   line-height: 1.63;
+}
+
+section {
+  margin-bottom: 100px;
+}
+
+.template-title {
+  font-size: min(6vw, 80px);
+  font-weight: 800;
+  position: relative;
+}
+
+.template-description {
+  color: #d9d9d9;
+  font-weight: 400;
+  margin-bottom: 56px;
+  max-width: 480px;
 }
 
 p {
@@ -189,7 +206,7 @@ a:hover {
 }
 
 .accent-label, .accent-label__sm {
-  --max-size:184px;
+  --max-size:167px;
   --size: 14.154vw;
   width: var(--size);
   height: var(--size);
@@ -200,7 +217,6 @@ a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url(./assets/img/bg-discount.svg) center/100% no-repeat;
   position: absolute;
   color: #fff;
   font-size: 55px;
@@ -208,23 +224,25 @@ a:hover {
   top: 0;
   right: 38px;
   text-transform: uppercase;
+  box-shadow: -4.56px 15.52px 26.48px 0px rgba(20, 62, 40, 0.4588235294);
+  z-index: 1;
 }
 .accent-label::before, .accent-label__sm::before {
   content: "";
   position: absolute;
-  width: calc(100% - 42px);
-  height: calc(100% - 42px);
-  box-shadow: -4.56px 15.52px 26.48px 0px rgba(20, 62, 40, 0.4588235294);
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
   z-index: -1;
+  background: url(./assets/img/bg-discount.svg) center/100% no-repeat;
 }
 
 .accent-label__sm {
   font-size: 32px;
-  --max-size:133px;
+  --max-size:113px;
 }
 
 .container {
@@ -277,9 +295,6 @@ header .btn-burger {
   color: #35c66b;
 }
 
-.banner {
-  padding-bottom: 100px;
-}
 .banner .container {
   display: flex;
   align-items: flex-start;
@@ -289,13 +304,10 @@ header .btn-burger {
 .banner-content {
   max-width: 574px;
 }
-.banner h1 {
-  font-size: min(6vw, 80px);
-  font-weight: 800;
+.banner .template-description {
   margin-bottom: 54px;
-  position: relative;
 }
-.banner h1::before {
+.banner .template-description::before {
   content: "";
   content: "";
   position: absolute;
@@ -310,11 +322,6 @@ header .btn-burger {
   left: 0px;
   top: -200px;
   background: url(./assets/img/banner-decporation-title.png);
-}
-.banner-desctiption {
-  color: #d9d9d9;
-  font-weight: 400;
-  margin-bottom: 56px;
 }
 .banner-btn-group {
   gap: 16px;
@@ -538,7 +545,6 @@ footer {
   border-radius: 46px;
   padding: 54px 78px 36px;
   position: relative;
-  height: 372px;
   display: flex;
   gap: 24px;
   text-align: center;
@@ -611,6 +617,40 @@ footer {
   z-index: 1;
 }
 
+.we-make .container {
+  display: flex;
+  position: relative;
+  gap: 24px;
+  justify-content: space-between;
+}
+.we-make__img-box {
+  max-width: 465px;
+  position: relative;
+}
+.we-make__img-box::before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 3px);
+  height: calc(100% - 3px);
+  top: 36px;
+  right: 49px;
+  z-index: -1;
+  background-color: #238249;
+  -webkit-mask: url(./assets/img/we-make___bg.svg);
+  mask: url(./assets/img/we-make___bg.svg);
+}
+.we-make__img-box__content-box {
+  max-width: 470px;
+}
+.we-make .we-make-line {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 993px;
+  height: 999px;
+  z-index: -1;
+}
+
 @media (min-width: 1025px) {
   .btn-burger {
     display: none;
@@ -646,6 +686,15 @@ footer {
   }
   .container {
     padding: 0 25px;
+  }
+  section {
+    margin-bottom: 64px;
+  }
+  .template-title {
+    font-size: min(12vw, 48px);
+  }
+  .template-description {
+    font-size: 12px;
   }
   .mobile-container {
     position: absolute;
@@ -712,12 +761,10 @@ footer {
     flex-direction: column-reverse;
     align-items: center;
   }
-  .banner h1 {
-    font-size: min(12vw, 48px);
+  .banner .template-title {
     margin-bottom: 36px;
   }
-  .banner-desctiption {
-    font-size: 12px;
+  .banner .template-description {
     margin-bottom: 36px;
   }
   .banner .banner-btn-group {
@@ -756,6 +803,42 @@ footer {
   .accent-label, .accent-label__sm {
     right: 55px;
   }
+  .accent-label__sm {
+    font-size: 24px;
+  }
+  .advantages .template-description {
+    margin-bottom: 0;
+  }
+  .advantages-row {
+    flex-direction: column;
+    width: 219px;
+    padding: 20px 42px;
+    border-radius: 26px;
+  }
+  .advantages-row .advantages-row::before {
+    left: calc(100% - 24px);
+    top: 50px;
+  }
+  .advantages-row .advantages-row::after {
+    left: 80px;
+  }
+  .advantages-row .accent-label__sm {
+    left: initial;
+    right: 0;
+    top: -24px;
+  }
+  .advantage__img-box {
+    --size: 86px;
+    margin-bottom: 8px;
+  }
+  .advantage img {
+    max-width: 124px;
+    max-height: 124px;
+  }
+  .advantage__title {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
   .footer {
     padding: 37px 0 7px;
   }
@@ -793,6 +876,11 @@ footer {
   }
   .footer .btn {
     margin-top: -17px;
+  }
+}
+@media screen and (max-width: 767.99px) {
+  .accent-label__sm {
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 575.99px) {
